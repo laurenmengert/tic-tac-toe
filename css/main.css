@@ -6,9 +6,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Amatic SC', cursive;
     font-weight: lighter;
+    font-size: 50px;
   }
+
   #board {
     display: grid;
     grid-template-columns: repeat(3, 15vmin);
@@ -16,7 +18,12 @@
   }
 
   #board div {
-    border: 1px solid grey;
+    border: 1px solid black;
+    font-size: 70px;
+    text-align: center;
   }
 
-  
+  #btn {
+    padding: 10px;
+    margin-top: 40px;
+  }

@@ -87,14 +87,14 @@
 
 
 const player = {
-    '1': 'purple',
-    '-1': 'green',
-    'null': 'transparent',
+    '1': 'X',
+    '-1': 'O',
+    'null': null
 };
 /*----- app's state (variables) -----*/
-let board;      // array of column array with 1, -1 or null
-let turn;        // 1 or -1
-let winner;      // 1 = player1; -1 = player2; 't' = tie; null = no winner
+let board;      
+let turn;         
+let winner;      
 
 
 /*----- cached element references -----*/
@@ -112,21 +112,28 @@ function init() {
     board = [null ,null, null, null, null, null, null, null, null];
     turn = 1;
     winner = null;
-    render();
-};
-function render() {
     renderBoard();
-}
+};
+//function render() {
+ //   renderBoard();
+//}
 function renderBoard() {
     board.forEach(function(cell, cellIdx) {
-        cellEls[cellIdx].style.backgroundColor = player[cell];
+        cellEls[cellIdx].innerHTML = player[cell];
     });
 };
 function handleClick(evt) {
     const cellIdx = cellEls.indexOf(evt.target)
     const cell = board[cellIdx];
     if (cell !== null) return;
-    board[cellIdx] = turn;
+    board[cellIdx] = turn; //how does this line work?
+    getWinner()
+    renderBoard();
     turn *= -1 
-    render();
 };
+
+//check for winner before changing turn
+
+function getWinner() {
+    
+}
