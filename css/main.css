@@ -22,7 +22,7 @@
 
   #board div {
     border: 1px solid black;
-    font-size: 70px;
+    font-size: 10vmin;
     text-align: center;
   }
 

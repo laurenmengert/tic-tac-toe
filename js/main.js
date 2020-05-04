@@ -37,14 +37,14 @@ const player = {
 };
 
 const winCombos = [
-    [[0], [1], [2]],
-    [[3], [4], [5]],
-    [[6], [7], [8]],
-    [[0], [3], [6]],
-    [[1], [4], [7]],
-    [[2], [5], [8]],
-    [[0], [4], [8]],
-    [[6], [4], [2]],
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [6, 4, 2],
     ];
     
 /*----- app's state (variables) -----*/
@@ -69,13 +69,13 @@ function init() {
     turn = 1;
     winner = null;
     renderBoard();
-};
+}
 
 function renderBoard() {
     board.forEach(function(cell, cellIdx) {
         cellEls[cellIdx].innerHTML = player[cell];
     });
-};
+}
 function handleClick(evt) {
     const cellIdx = cellEls.indexOf(evt.target)
     const cell = board[cellIdx];
@@ -84,10 +84,11 @@ function handleClick(evt) {
     winner = getWinner(); //check for winner before changing turn
     renderBoard();
     turn *= -1;
-};
+}
 
 
 function getWinner() {
 //I tried for hours to write this function. I just could not get it :(
+
         
 }
