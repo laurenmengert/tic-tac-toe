@@ -29,68 +29,24 @@
 
 /*----- constants -----*/
 
-// const playerLookup = {
-//     '1': 'X',
-//     '-1': 'O',
-//     'null': 'transparent'
-// };
-
-// /*----- app's state (variables) -----*/
-
-// let board;
-// let turn;
-// //let winner;
-
-// /*----- cached element references -----*/
-
-// const cells = Array.from(document.querySelectorAll('#board > div'));
-
-// /*----- event listeners -----*/
-
-// document.getElementById('board').addEventListener('click', handleClick); //handle click is a function that will be called later
-// document.getElementById('button').addEventListener('click', init);
-
-// /*----- functions -----*/
-
-// init();
-
-// function init() {
-//     board = [null, null, null, null, null, null, null, null, null];
-//     turn = 1;
-//     winner = null;
-//     render();
-
-// }
-
-
-// function render() { 
-//     renderBoard()
-
-// }
-
-// function renderBoard() {
-//     board.forEach(function(cell, cellIdx) {
-//         cellEls[cellIdx].style.backgroundColor = colorLookup[cell];
-//     });
-// };
-
-// function handleClick(evt) {
-//     const cellIdx = cellsEls.indexOf(evt.target);
-    
-//     turn *= -1;
-
-//     render();
-    
-// }
-
-//-----------------------------------------------------------------------------------------------
-
 
 const player = {
     '1': 'X',
     '-1': 'O',
     'null': null
 };
+
+const winCombos = [
+    [[0], [1], [2]],
+    [[3], [4], [5]],
+    [[6], [7], [8]],
+    [[0], [3], [6]],
+    [[1], [4], [7]],
+    [[2], [5], [8]],
+    [[0], [4], [8]],
+    [[6], [4], [2]],
+    ];
+    
 /*----- app's state (variables) -----*/
 let board;      
 let turn;         
@@ -114,9 +70,7 @@ function init() {
     winner = null;
     renderBoard();
 };
-//function render() {
- //   renderBoard();
-//}
+
 function renderBoard() {
     board.forEach(function(cell, cellIdx) {
         cellEls[cellIdx].innerHTML = player[cell];
@@ -127,13 +81,13 @@ function handleClick(evt) {
     const cell = board[cellIdx];
     if (cell !== null) return;
     board[cellIdx] = turn; //how does this line work?
-    getWinner()
+    winner = getWinner(); //check for winner before changing turn
     renderBoard();
-    turn *= -1 
+    turn *= -1;
 };
 
-//check for winner before changing turn
 
 function getWinner() {
-    
+//I tried for hours to write this function. I just could not get it :(
+        
 }

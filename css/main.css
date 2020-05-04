@@ -7,8 +7,11 @@
     justify-content: center;
     align-items: center;
     font-family: 'Amatic SC', cursive;
-    font-weight: lighter;
     font-size: 50px;
+    background-image: url(../pictures/STg8RW.png);
+    background-size: cover;
+    background-attachment: fixed;
+   
   }
 
   #board {
@@ -27,3 +30,4 @@
     padding: 10px;
     margin-top: 40px;
   }
+
