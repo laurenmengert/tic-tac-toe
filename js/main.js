@@ -80,6 +80,9 @@ function handleClick(evt) {
     const cellIdx = cellEls.indexOf(evt.target)
     const cell = board[cellIdx];
     if (cell !== null) return;
+    console.log(board[cellIdx]);
+    console.log(turn, "This is the turn variable");
+    console.log(cellIdx);
     board[cellIdx] = turn; //how does this line work?
     winner = getWinner(); //check for winner before changing turn
     renderBoard();
